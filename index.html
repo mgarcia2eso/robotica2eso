@@ -6,6 +6,26 @@
 <title>Fantasy World</title>
 
 <style>
+    .planet-button{
+    text-align:center;
+    margin:40px 0;
+}
+
+.planet-button a{
+    display:inline-block;
+    background:linear-gradient(135deg,#2e8b57,#3fa9f5);
+    color:white;
+    text-decoration:none;
+    padding:15px 25px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:1.1rem;
+    transition:0.3s;
+}
+
+.planet-button a:hover{
+    transform:scale(1.05);
+}
 *{
     margin:0;
     padding:0;
@@ -17,7 +37,7 @@ html{
     scroll-behavior:smooth;
 }
 
-body{
+<body id="top">{
     background: linear-gradient(to bottom, #dff5e1, #d9f0ff);
     color:#2d3a2d;
 }
@@ -316,7 +336,86 @@ footer{
 
     </div>
 </section>
+<div class="planet-button">
+    <a href="#planeta">🌎 Información sobre el planeta en el que viven</a>
+</div>
+    <div class="planet-button">
+    <a href="#planeta">🌎 Información sobre el planeta en el que viven</a>
+</div>
+    <section id="planeta">
 
+    <div class="section-banner"
+         style="background:linear-gradient(135deg,#2e8b57,#3fa9f5);">
+        <h2>🌎 Planeta Eldoria</h2>
+    </div>
+
+    <div style="
+        max-width:1000px;
+        margin:auto;
+        padding:40px;
+        background:white;
+        border-radius:20px;
+        box-shadow:0 5px 15px rgba(0,0,0,0.15);
+        margin-top:30px;
+        margin-bottom:30px;
+    ">
+
+        <h3>🌿 Descripción General</h3>
+        <p>
+            Eldoria es un planeta cubierto por enormes bosques
+            luminosos, océanos cristalinos y montañas flotantes.
+            Es el hogar de todas las criaturas mágicas de la
+            enciclopedia Fantasy World.
+        </p>
+
+        <br>
+
+        <h3>🌳 Continentes</h3>
+        <p>
+            El planeta posee tres grandes regiones:
+            Sylvaria, el reino de los bosques;
+            Aquaria, el imperio submarino;
+            y Altaria, las islas suspendidas entre las nubes.
+        </p>
+
+        <br>
+
+        <h3>✨ Energía Mágica</h3>
+        <p>
+            Toda la vida en Eldoria depende de la Energía Esmeralda,
+            una fuerza natural que surge del núcleo del planeta y
+            alimenta los poderes de criaturas como el Lumicervo,
+            Octoluna y Truenáguila.
+        </p>
+
+        <br>
+
+        <h3>📜 Historia</h3>
+        <p>
+            Según las leyendas generadas por IA, Eldoria nació cuando
+            una estrella antigua se fragmentó en miles de cristales
+            mágicos. Estos cristales dieron origen a los océanos,
+            bosques y cielos encantados que existen hoy.
+        </p>
+
+        <br>
+
+        <div style="text-align:center;">
+            <a href="#top"
+               style="
+               background:#2e8b57;
+               color:white;
+               padding:12px 20px;
+               border-radius:20px;
+               text-decoration:none;
+               font-weight:bold;">
+               ⬆ Volver al inicio
+            </a>
+        </div>
+
+    </div>
+
+</section>
 <footer>
     Miriam García — 2do ESO
 </footer>
