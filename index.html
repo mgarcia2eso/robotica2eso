@@ -4,12 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Fantasy World</title>
+
 <style>
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family: Arial, sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
@@ -21,8 +26,8 @@ body{
 header{
     background: linear-gradient(135deg, #2e8b57, #3fa9f5);
     color:white;
-    padding:20px;
     text-align:center;
+    padding:25px;
     border-bottom-left-radius:30px;
     border-bottom-right-radius:30px;
     box-shadow:0 4px 10px rgba(0,0,0,0.2);
@@ -34,24 +39,26 @@ header{
 
 header h1{
     margin-top:10px;
-    font-size:2.5rem;
+    font-size:2.8rem;
 }
 
-/* MENU */
+/* MENÚ */
 nav{
     background:#4c7c59;
-    padding:15px;
     position:sticky;
     top:0;
     z-index:100;
 }
 
 nav ul{
+    list-style:none;
     display:flex;
     justify-content:center;
-    gap:30px;
-    list-style:none;
     flex-wrap:wrap;
+}
+
+nav li{
+    margin:10px;
 }
 
 nav a{
@@ -68,19 +75,39 @@ nav a:hover{
 }
 
 /* SECCIONES */
-section{
-    padding:40px 20px;
+.section-banner{
+    height:250px;
+    background-size:cover;
+    background-position:center;
+    position:relative;
 }
 
-.section-title{
+.section-banner::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:rgba(0,0,0,0.35);
+}
+
+.section-banner h2{
+    position:absolute;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%);
+    color:white;
+    font-size:2.3rem;
     text-align:center;
-    margin-bottom:30px;
-    color:#2d6a4f;
-    font-size:2rem;
+    z-index:2;
 }
 
-/* TARJETAS */
+section{
+    padding-bottom:50px;
+}
+
 .cards{
+    max-width:1200px;
+    margin:auto;
+    padding:40px 20px;
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
     gap:25px;
@@ -98,10 +125,10 @@ section{
     transform:translateY(-8px);
 }
 
-.image{
+.card-image{
     background:linear-gradient(135deg,#b7e4c7,#90e0ef);
-    font-size:5rem;
     text-align:center;
+    font-size:5rem;
     padding:25px;
 }
 
@@ -115,8 +142,8 @@ section{
 }
 
 .card p{
+    line-height:1.6;
     margin-bottom:15px;
-    line-height:1.5;
 }
 
 button{
@@ -135,20 +162,17 @@ button:hover{
 
 /* PIE */
 footer{
-    margin-top:40px;
     background:#2d6a4f;
     color:white;
     text-align:center;
-    padding:20px;
+    padding:25px;
+    font-weight:bold;
     border-top-left-radius:30px;
     border-top-right-radius:30px;
 }
-
-html{
-    scroll-behavior:smooth;
-}
 </style>
 </head>
+
 <body>
 
 <header>
@@ -158,41 +182,47 @@ html{
 
 <nav>
     <ul>
-        <li><a href="#guardianes">Guardianes del Bosque</a></li>
-        <li><a href="#abismos">Misterios del Océano</a></li>
-        <li><a href="#cielos">Señores del Cielo</a></li>
+        <li><a href="#guardianes">🌳 Guardianes del Bosque</a></li>
+        <li><a href="#oceano">🌊 Misterios del Océano</a></li>
+        <li><a href="#cielo">☁️ Señores del Cielo</a></li>
     </ul>
 </nav>
 
-<!-- TERRESTRES -->
+<!-- BOSQUE -->
 <section id="guardianes">
-    <h2 class="section-title">🌳 Guardianes del Bosque</h2>
+
+    <div class="section-banner"
+         style="background-image:url('https://humanidades.com/wp-content/uploads/2018/08/bosque-1-e1577589217640.jpg');">
+        <h2>🌳 Guardianes del Bosque</h2>
+    </div>
 
     <div class="cards">
 
         <div class="card">
-            <div class="image">🦌✨</div>
+            <div class="card-image">🦌✨</div>
             <div class="card-content">
                 <h3>Lumicervo</h3>
                 <p>
-                    Un majestuoso ciervo de luz capaz de iluminar
-                    bosques enteros durante la noche.
+                    Un majestuoso ciervo mágico cuyos cuernos iluminan
+                    los senderos ocultos del bosque.
                 </p>
-                <button onclick="alert('Hábitat: Bosques antiguos.\nPoderes: Crear luz mágica y sanar plantas.\nDebilidades: La contaminación oscurece sus cuernos.\nHistoria: Según los relatos generados por IA, el Lumicervo nació cuando una estrella cayó en un bosque encantado hace miles de años.')">
+
+                <button onclick="alert('Nombre: Lumicervo\n\nHábitat: Bosques ancestrales.\n\nPoderes: Genera luz mágica y acelera el crecimiento de las plantas.\n\nDebilidades: La contaminación debilita sus cuernos.\n\nHistoria: Creado por IA, nació cuando una estrella cayó sobre un bosque encantado hace miles de años.')">
                     Ver más
                 </button>
             </div>
         </div>
 
         <div class="card">
-            <div class="image">🦊🍃</div>
+            <div class="card-image">🦊🍃</div>
             <div class="card-content">
                 <h3>Verdizorro</h3>
                 <p>
-                    Un zorro cubierto de hojas que se camufla entre
-                    la vegetación.
+                    Un veloz zorro cubierto de hojas capaz de
+                    desaparecer entre la vegetación.
                 </p>
-                <button onclick="alert('Hábitat: Selvas y praderas.\nPoderes: Invisibilidad natural y control de raíces.\nDebilidades: El fuego seca su pelaje vegetal.\nHistoria: Se cree que surgió de la unión entre un espíritu del bosque y un zorro común.')">
+
+                <button onclick="alert('Nombre: Verdizorro\n\nHábitat: Selvas y praderas mágicas.\n\nPoderes: Camuflaje perfecto y control de raíces.\n\nDebilidades: El fuego seca su pelaje vegetal.\n\nHistoria: Surgió cuando un espíritu del bosque se fusionó con un zorro salvaje.')">
                     Ver más
                 </button>
             </div>
@@ -201,35 +231,41 @@ html{
     </div>
 </section>
 
-<!-- ACUATICOS -->
-<section id="abismos">
-    <h2 class="section-title">🌊 Misterios del Océano</h2>
+<!-- OCEANO -->
+<section id="oceano">
+
+    <div class="section-banner"
+         style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIa1VTlEZx1XFYze2OCLKUkQjT8Ovz86qgnQ&s');">
+        <h2>🌊 Misterios del Océano</h2>
+    </div>
 
     <div class="cards">
 
         <div class="card">
-            <div class="image">🐟💎</div>
+            <div class="card-image">🐟💎</div>
             <div class="card-content">
                 <h3>Cristalmar</h3>
                 <p>
-                    Pez gigante cuyas escamas parecen hechas de
-                    cristal brillante.
+                    Un pez gigantesco con escamas de cristal que
+                    reflejan cualquier hechizo.
                 </p>
-                <button onclick="alert('Hábitat: Océanos profundos.\nPoderes: Reflejar ataques mágicos.\nDebilidades: Las aguas turbias reducen su fuerza.\nHistoria: Las leyendas cuentan que fue creado por antiguas corrientes mágicas del fondo marino.')">
+
+                <button onclick="alert('Nombre: Cristalmar\n\nHábitat: Océanos profundos.\n\nPoderes: Reflejar magia y producir destellos cegadores.\n\nDebilidades: Las aguas contaminadas reducen su energía.\n\nHistoria: Según la IA, apareció cuando minerales mágicos se fusionaron con criaturas marinas antiguas.')">
                     Ver más
                 </button>
             </div>
         </div>
 
         <div class="card">
-            <div class="image">🐙🌌</div>
+            <div class="card-image">🐙🌙</div>
             <div class="card-content">
                 <h3>Octoluna</h3>
                 <p>
-                    Un pulpo brillante que aparece únicamente bajo
-                    la luz de la luna llena.
+                    Un pulpo luminoso que solo emerge durante las
+                    noches de luna llena.
                 </p>
-                <button onclick="alert('Hábitat: Arrecifes secretos.\nPoderes: Crear ilusiones acuáticas.\nDebilidades: La luz intensa del sol.\nHistoria: Nació, según los cronistas de IA, de fragmentos de luz lunar atrapados en el océano.')">
+
+                <button onclick="alert('Nombre: Octoluna\n\nHábitat: Arrecifes secretos.\n\nPoderes: Crear ilusiones acuáticas y controlar corrientes.\n\nDebilidades: La luz solar intensa.\n\nHistoria: Nació de fragmentos de luz lunar atrapados en las profundidades del mar.')">
                     Ver más
                 </button>
             </div>
@@ -238,35 +274,41 @@ html{
     </div>
 </section>
 
-<!-- VOLADORES -->
-<section id="cielos">
-    <h2 class="section-title">☁️ Señores del Cielo</h2>
+<!-- CIELO -->
+<section id="cielo">
+
+    <div class="section-banner"
+         style="background-image:url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWCE9AMrLPdt5H9E31mTsV1R54W8ElZOW8Kw&s');">
+        <h2>☁️ Señores del Cielo</h2>
+    </div>
 
     <div class="cards">
 
         <div class="card">
-            <div class="image">🦅⚡</div>
+            <div class="card-image">🦅⚡</div>
             <div class="card-content">
                 <h3>Truenáguila</h3>
                 <p>
-                    Un águila gigante capaz de volar entre tormentas
-                    sin sufrir daño.
+                    Una gigantesca águila capaz de atravesar tormentas
+                    mientras controla los rayos.
                 </p>
-                <button onclick="alert('Hábitat: Montañas elevadas.\nPoderes: Generar rayos y controlar vientos.\nDebilidades: El silencio mágico bloquea sus poderes.\nHistoria: Se dice que nació dentro de una nube de tormenta eterna.')">
+
+                <button onclick="alert('Nombre: Truenáguila\n\nHábitat: Montañas y nubes de tormenta.\n\nPoderes: Control del viento y los relámpagos.\n\nDebilidades: El silencio mágico anula sus habilidades.\n\nHistoria: Fue creada dentro de una tormenta eterna que nunca llegó a disiparse.')">
                     Ver más
                 </button>
             </div>
         </div>
 
         <div class="card">
-            <div class="image">🦋🌈</div>
+            <div class="card-image">🦋🌈</div>
             <div class="card-content">
                 <h3>Arcoaleta</h3>
                 <p>
-                    Mariposa gigante que deja un rastro de colores
-                    brillantes en el cielo.
+                    Una mariposa gigante que deja senderos de colores
+                    brillantes por el cielo.
                 </p>
-                <button onclick="alert('Hábitat: Jardines flotantes.\nPoderes: Crear arcoíris y polen curativo.\nDebilidades: Los climas extremadamente fríos.\nHistoria: Fue creada cuando los primeros colores del amanecer cobraron vida.')">
+
+                <button onclick="alert('Nombre: Arcoaleta\n\nHábitat: Jardines flotantes.\n\nPoderes: Crear arcoíris y polen curativo.\n\nDebilidades: Temperaturas extremadamente frías.\n\nHistoria: Surgió cuando los colores del primer amanecer cobraron vida.')">
                     Ver más
                 </button>
             </div>
@@ -278,6 +320,9 @@ html{
 <footer>
     Miriam García — 2do ESO
 </footer>
+
+</body>
+</html>
 
 </body>
 </html>
